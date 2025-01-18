@@ -1,0 +1,35 @@
+package: structure_metainfo
+version: "2.1.1"
+author: alex+ Digitales Marketing
+supportpage: https://github.com/FriendsOfRedaxo/structure_metainfo/
+
+requires:
+    php:
+        version: "^8.3"
+    redaxo: ^5.17
+    packages:
+        yrewrite: "^2"
+        yform/manager: "^4"
+
+page:
+    strucutre_metainfo:
+        title: translate:structure_metainfo_title
+        perm: admin[]
+        icon: rex-icon rex-icon-metainfo
+        subpages:
+            article:
+                title: translate:structure_metainfo.article
+                perm: structure_metainfo[article]
+                icon: rex-icon fa-globe
+            field:
+                title: translate:structure_metainfo.field
+                perm: structure_metainfo[field]
+                icon: rex-icon fa-globe
+            docs:
+                title: translate:structure_metainfo.docs
+                perm: structure_metainfo[]
+                icon: rex-icon fa-info-circle
+                itemClass: pull-right
+
+default_config:
+    sidebar_or_tab: tab
