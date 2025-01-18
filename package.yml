@@ -1,7 +1,7 @@
 package: structure_metainfo
-version: "2.1.1"
+version: "0.1.0"
 author: alex+ Digitales Marketing
-supportpage: https://github.com/FriendsOfRedaxo/structure_metainfo/
+supportpage: https://github.com/alexplusde/structure_metainfo/
 
 requires:
     php:
