@@ -2,6 +2,8 @@
 
 namespace Alexplusde\StructureMetainfo;
 
+use rex;
+use rex_sql;
 use rex_category;
 use rex_yform_manager_dataset;
 
@@ -66,7 +68,67 @@ class Category extends rex_yform_manager_dataset
 
         return $subject;
     }
+
+    public static function epClangAdded($ep) {
+        $name = $ep->getName();
+        $subject = $ep->getSubject();
+        $params = $ep->getParams();
+            
+        $clang_id = $params['clang'];
+
+        // per rex_sql alle Einträge duplizieren mit neuer clang_id
+        $query = 'INSERT INTO ' . rex::getTable('structure_metainfo_category') . ' (article_id, clang_id, article_pid) SELECT id, clang_id, pid FROM ' . rex::getTable('article') . ' WHERE clang_id = '. $clang_id .' ON DUPLICATE KEY UPDATE article_pid = pid';
+        rex_sql::factory()->setQuery($query);
+
+        return $subject;
+    }
+
+    public static function epClangDeleted($ep) {
+        $name = $ep->getName();
+        $subject = $ep->getSubject();
+        $params = $ep->getParams();
+            
+        Category::query()
+        ->where('clang_id', $params['clang'])
+        ->find()->delete();
+
+        return $subject;
+    }
+
+    public static function epCatToArt($ep) {
+        $name = $ep->getName();
+        $subject = $ep->getSubject();
+        $params = $ep->getParams();
+            
+        Category::query()->where('category_id', $params['id'])->find()->delete();
+
+        return $subject;
+    }
+
     
+    /**
+     *   ART_TO_STARTARTICLE
+     *   : Daten: keine
+     *   : Parameter: ['id' => $neu_id, 'id_old' => $alt_id, 'clang' => $clang]
+     */
+
+     public static function epArtToStartarticle($ep) {
+        $name = $ep->getName();
+        $subject = $ep->getSubject();
+        $params = $ep->getParams();
+        
+        $category = rex_category::get($params['id']);
+        $category_pid = $category->pid;
+
+        $dataset = Category::query()->where('category_id', $params['id_old'])->where('clang_id', $params['clang'])->where('category_pid', $category_pid)->findOne();
+        $dataset->setValue('category_id', $params['id'])
+        ->setValue('category_pid', $category_pid)
+        ->save();
+
+        return $subject;
+    }
+    
+
     /**
      * Fügt einem Artikel die Möglichkeit hinzu, Metainfos zuzuordnen.
      *
@@ -88,10 +150,3 @@ class Category extends rex_yform_manager_dataset
     }
 
 }
-
-/** TODO
- * 
- * CAT_TO_ART
- * : Daten: keine
- * : Parameter: ['id' => $art_id, 'clang' => $clang]
- */

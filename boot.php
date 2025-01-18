@@ -7,11 +7,8 @@ use rex_extension_point;
 use rex_yform_manager_dataset;
 use rex_fragment;
 use rex_path;
-use rex_addon;
 use rex_config;
 use rex_be_controller;
-use rex_category;
-use rex_article;
 
 // Listendarstellung von YRewrite Domains um eine Spalte ergänzen mit Link zu YRewrite Metainfos
 rex_extension::register('PACKAGES_INCLUDED', function (rex_extension_point $ep) {
@@ -41,12 +38,14 @@ rex_extension::register('CAT_ADDED', [Category::class, 'epCatAdded']);
 rex_extension::register('CAT_UPDATED', [Category::class, 'epCatUpdated']);
 rex_extension::register('CAT_DELETED', [Category::class, 'epCatDeleted']);
 
-// rex_extension::register('CAT_TO_ART', [Category::class, 'epCatToArt']);
-// rex_extension::register('ART_TO_CAT', [Article::class, 'epArtToCat']);
-// rex_extension::register('ART_TO_STARTARTICLE', [Category::class, 'epArtToStartarticle']);
+rex_extension::register('CAT_TO_ART', [Category::class, 'epCatToArt']);
+rex_extension::register('ART_TO_CAT', [Article::class, 'epArtToCat']);
+rex_extension::register('ART_TO_STARTARTICLE', [Category::class, 'epArtToStartarticle']);
 
-// rex_extension::register('CLANG_ADDED', [Structure::class, 'epClangAdded']);
-// rex_extension::register('CLANG_DELETED', [Structure::class, 'epClangDeleted']);
+rex_extension::register('CLANG_ADDED', [Article::class, 'epClangAdded']);
+rex_extension::register('CLANG_ADDED', [Category::class, 'epClangAdded']);
+rex_extension::register('CLANG_DELETED', [Article::class, 'epClangDeleted']);
+rex_extension::register('CLANG_DELETED', [Category::class, 'epClangDeleted']);
 
 
 if (\rex_addon::get('yform')->isAvailable() && !\rex::isSafeMode()) {

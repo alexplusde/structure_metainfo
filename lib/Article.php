@@ -2,6 +2,8 @@
 
 namespace Alexplusde\StructureMetainfo;
 
+use rex;
+use rex_sql;
 use rex_article;
 use rex_yform_manager_dataset;
 
@@ -71,7 +73,54 @@ class Article extends rex_yform_manager_dataset
 
         return $subject;
     }
-    
+
+    public static function epClangAdded($ep) {
+        $name = $ep->getName();
+        $subject = $ep->getSubject();
+        $params = $ep->getParams();
+
+        $clang_id = $params['clang'];
+
+        // per rex_sql alle Einträge duplizieren mit neuer clang_id
+        $query = 'INSERT INTO ' . rex::getTable('structure_metainfo_article') . ' (article_id, clang_id, article_pid) SELECT id, clang_id, pid FROM ' . rex::getTable('article') . ' WHERE clang_id = '. $clang_id .' ON DUPLICATE KEY UPDATE article_pid = pid';
+        rex_sql::factory()->setQuery($query);
+
+        return $subject;
+    }
+
+    public static function epClangDeleted($ep) {
+        $name = $ep->getName();
+        $subject = $ep->getSubject();
+        $params = $ep->getParams();
+            
+        Article::query()
+        ->where('clang_id', $params['clang'])
+        ->find()->delete();
+
+        return $subject;
+    }
+
+    /**
+    * ART_TO_CAT
+    *   : Daten: keine
+    *   : Parameter: ['id' => $art_id, 'clang' => $clang]
+    */
+
+    public static function epArtToCat($ep) {
+        $name = $ep->getName();
+        $subject = $ep->getSubject();
+        $params = $ep->getParams();
+            
+        $article = $ep->getParam('article');
+        $article_pid = $article->pid;
+        Category::create()
+        ->setValue('article_id', $params['id'])
+        ->setValue('clang_id', $params['clang'])
+        ->setValue('article_pid', $article_pid)
+        ->save();
+        return $subject;
+    }
+
     /**
      * Fügt einem Artikel die Möglichkeit hinzu, Metainfos zuzuordnen.
      *
@@ -89,28 +138,3 @@ class Article extends rex_yform_manager_dataset
         });
     }
 }
-
-/**
- * TODO
- * ART_TO_CAT
- *   : Daten: keine
- *   : Parameter: ['id' => $art_id, 'clang' => $clang]
- *
- *   ART_TO_STARTARTICLE
- *   : Daten: keine
- *   : Parameter: ['id' => $neu_id, 'id_old' => $alt_id, 'clang' => $clang]
- *
- */
-
-
-/**
- * 
-* CLANG_ADDED
-* : Daten: keine
-* : Parameter: ['id' => $clang->getId(), 'name' => $clang->getName(), 'clang' => $clang]
-
-* CLANG_DELETED
-* : Daten: keine
-* : Parameter: ['id' => $clang->getId(), 'name' => $clang->getName(), 'clang' => $clang]
-
- */
