@@ -1,4 +1,4 @@
-# Meta-Infos in REDAXO 5 für Artikel und Kategorien auf YForm-Basis
+# Metadaten in REDAXO 5 für Artikel und Kategorien auf YForm-Basis
 
 Ergänzt das Structure-Addon um die Möglichkeit, Metainformationen an Artikel und Kategorien zu verwalten. Mit vorgefertigten, einfachen aber sinnvollen Konfigurationsfeldern, passender YOrm-Dataset-Methoden und Backend-Seiten für die Eingabe.
 
@@ -9,12 +9,12 @@ Ergänzt das Structure-Addon um die Möglichkeit, Metainformationen an Artikel u
 Voraussetzungen: YForm ^4.
 
 1. Installiere das Addon über den REDAXO-Installer
-2. Ändere ggf. in der rex_config-Tabelle die Einstellung `sidebar_or_tab` auf `sidebar` (Standard ist `tab`).
+2. Ändere ggf. in der `rex_config`-Tabelle die Einstellung `sidebar_or_tab` auf `sidebar` (Standard ist `tab`).
 
-Anschließend können die passenden Meta-Informationen am Artikel eingegeben werden.
+Anschließend können die passenden Metadaten am Artikel eingegeben werden.
 
-> **Hinweis:**
->
+> **Hinweis:** Zur Abgrenzung zum Addon "Metainfos" wird in diesem Add-on von "Metadaten" gesprochen.
+
 ## Features
 
 ### Gemeinsamkeiten und Unterschiede zum klassischen Metainfo-Addon (Core)
@@ -29,7 +29,7 @@ Anschließend können die passenden Meta-Informationen am Artikel eingegeben wer
 | HTML5-Feldtypen            | ❌ Nein               | ✅ Ja                            |
 | YOrm-Dataset-Methoden      | ❌ Nein               | ✅ Ja                            |
 | Darstellung                | ⚠️ In Sidebar         | ✅ Sidebar oder Tab              |
-| Berücksichtigung aller EPs | ✅ Ja                 | ⚠️ In Arbeit                     |
+| Berücksichtigung aller EPs | ✅ Ja                 | ✅ Ja                            |
 
 ### Was unterscheidet dieses Addon vom Core-Addon?
 

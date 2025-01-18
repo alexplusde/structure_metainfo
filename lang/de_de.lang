@@ -24,3 +24,8 @@ structure_metainfo.update = aktualisieren
 
 structure_metainfo.article_tab.title = Metadaten
 structure_metainfo.category_tab.title = Metadaten (Kategorie)
+
+#
+
+structure_metainfo_article = Artikel-Metadaten
+structure_metainfo_category = Kategorie-Metadaten
