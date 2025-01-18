@@ -19,3 +19,4 @@ structure_metainfo.updated = Angaben erfolgreich gespeichert.
 structure_metainfo.update = aktualisieren
 
 structure_metainfo.tab.title = Meta-Infos
+structure_metainfo.category_tab.title = Meta-Infos (Kategorie)

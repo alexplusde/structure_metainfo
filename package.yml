@@ -20,11 +20,19 @@ page:
             article:
                 title: translate:structure_metainfo.article
                 perm: structure_metainfo[article]
-                icon: rex-icon fa-globe
-            field:
+                icon: rex-icon rex-icon-article
+            category:
+                title: translate:structure_metainfo.article
+                perm: structure_metainfo[article]
+                icon: rex-icon rex-icon-article
+            article_field:
                 title: translate:structure_metainfo.field
                 perm: structure_metainfo[field]
-                icon: rex-icon fa-globe
+                icon: rex-icon rex-icon-metainfo
+            category_field:
+                title: translate:structure_metainfo.field
+                perm: structure_metainfo[field]
+                icon: rex-icon rex-icon-metainfo
             docs:
                 title: translate:structure_metainfo.docs
                 perm: structure_metainfo[]

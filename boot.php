@@ -64,7 +64,7 @@ if (\rex_addon::get('yform')->isAvailable() && !\rex::isSafeMode()) {
         Article::class
     );
     rex_yform_manager_dataset::setModelClass(
-        'rex_structure_metainfo',
+        'rex_structure_metainfo_category',
         Category::class
     );
 }
@@ -72,7 +72,9 @@ if (\rex_addon::get('yform')->isAvailable() && !\rex::isSafeMode()) {
 if (\rex::isBackend()) {
     if(rex_be_controller::getCurrentPagePart() && rex_be_controller::getCurrentPagePart()[0] == "content") {
 //        if(rex_config::get('structure_metainfo', 'sidebar_or_tab') === 'tab') {
-                Structure::addContentTab();
+                Article::addContentTab();
+                Category::addContentTab();
+
 //        }
     }
 }
