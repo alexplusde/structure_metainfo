@@ -16,6 +16,10 @@ page:
     perm: admin[]
     icon: rex-icon rex-icon-metainfo
     subpages:
+        settings:
+            title: translate:structure_metainfo.settings
+            perm: structure_metainfo[settings]
+            icon: rex-icon fa-cogs
         article_field:
             title: translate:structure_metainfo.article_field
             perm: structure_metainfo[field]
@@ -32,10 +36,6 @@ page:
             title: translate:structure_metainfo.category
             perm: structure_metainfo[article]
             icon: rex-icon rex-icon-category
-        settings:
-            title: translate:structure_metainfo.settings
-            perm: structure_metainfo[settings]
-            icon: rex-icon fa-cogs
         docs:
             title: translate:structure_metainfo.docs
             perm: structure_metainfo[]
