@@ -44,3 +44,4 @@ page:
 
 default_config:
     sidebar_or_tab: tab
+    individual_or_synced: individual
