@@ -1,6 +1,6 @@
 <?php 
 
-rex_sql_table::get(rex::getTable('structure_metainfo'))
+rex_sql_table::get(rex::getTable('structure_metainfo_article'))
     ->ensurePrimaryIdColumn()
     ->ensureColumn(new rex_sql_column('article_id', 'int(10) unsigned'))
     ->ensureColumn(new rex_sql_column('clang_id', 'int(10) unsigned'))
@@ -9,7 +9,7 @@ rex_sql_table::get(rex::getTable('structure_metainfo'))
     ->ensureIndex(new rex_sql_index('article_id_clang_id', ['article_id', 'clang_id'], rex_sql_index::UNIQUE))
     ->ensure();
 
-$query = 'INSERT INTO ' . rex::getTable('structure_metainfo') . ' (article_id, clang_id, article_pid) SELECT id, clang_id, pid FROM ' . rex::getTable('article') . ' ON DUPLICATE KEY UPDATE article_pid = pid';
+$query = 'INSERT INTO ' . rex::getTable('structure_metainfo_article') . ' (article_id, clang_id, article_pid) SELECT id, clang_id, pid FROM ' . rex::getTable('article') . ' ON DUPLICATE KEY UPDATE article_pid = pid';
 
 rex_sql::factory()->setQuery($query);
 
