@@ -13,7 +13,7 @@ use rex_be_controller;
 // Listendarstellung von YRewrite Domains um eine Spalte ergänzen mit Link zu YRewrite Metainfos
 rex_extension::register('PACKAGES_INCLUDED', function (rex_extension_point $ep) {
     rex_extension::register('STRUCTURE_CONTENT_SIDEBAR', function (rex_extension_point $ep) {
-        if(rex_config::get('structure_metainfo', 'sidebar_or_tab') === "tab") {
+        if(rex_config::get('structure_metainfo', 'sidebar_or_tab') === "sidebar") {
             $params = $ep->getParams();
             $subject = $ep->getSubject();
 
