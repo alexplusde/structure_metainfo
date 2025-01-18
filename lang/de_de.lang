@@ -11,8 +11,8 @@ structure_metainfo.settings = Einstellungen
 structure_metainfo.docs = Docs
 
 # YForm Felder
-structure_metainfo_article.table = 🍋 Artikel Metadaten
-structure_metainfo_category.table = 🍋 Kategorie Metadaten
+structure_metainfo_article.table = 🍋 Artikel-Metadaten
+structure_metainfo_category.table = 🍋 Kategorie-Metadaten
 
 structure_metainfo_add = Hinzufügen
 structure_metainfo_edit = Bearbeiten
