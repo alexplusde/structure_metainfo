@@ -5,14 +5,20 @@ namespace Alexplusde\StructureMetainfo;
 use rex;
 use rex_sql;
 use rex_article;
+use rex_clang;
 use rex_yform_manager_dataset;
 
 class Article extends rex_yform_manager_dataset
 {
     public static function getCurrent(): ?self
     {
-        return self::query()->where('article_id', rex_article::getCurrent())->findOne();
+        $article_id = rex_article::getCurrentId();
+        $clang_id = rex_clang::getCurrentId();
+        return self::query()->where('article_id', $article_id)
+        ->where('clang_id', $clang_id)
+        ->findOne();
     }
+
     /** @api */
     
     public static function getCurrentValue(string $key): mixed

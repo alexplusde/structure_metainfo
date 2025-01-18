@@ -5,14 +5,20 @@ namespace Alexplusde\StructureMetainfo;
 use rex;
 use rex_sql;
 use rex_category;
+use rex_clang;
 use rex_yform_manager_dataset;
 
 class Category extends rex_yform_manager_dataset
 {
     public static function getCurrent(): ?self
     {
-        return self::query()->where('article_id', rex_category::getCurrent())->findOne();
+        $category_id = rex_category::getCurrent()->getId();
+        $clang_id = rex_clang::getCurrentId();
+        return self::query()->where('category_id', $category_id)
+        ->where('clang_id', $clang_id)
+        ->findOne();
     }
+
     /** @api */
     
     public static function getCurrentValue(string $key): mixed
