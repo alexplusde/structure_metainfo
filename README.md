@@ -17,23 +17,23 @@ Anschließend können die passenden Meta-Informationen am Artikel eingegeben wer
 >
 ## Features
 
-### Gemeinsamkeiten und Unterschiede zum klassische Metainfo
+### Gemeinsamkeiten und Unterschiede zum klassischen Metainfo-Addon (Core)
 
 | Funktionen                 | Metainfo (Core)       | Structure Metainfo (dieses Addon) |
 |----------------------------|-----------------------|-----------------------------------|
 | Mindestanforderung         | REDAXO ^5.0           | REDAXO ^5.18 und YForm ^4         |
-| Aktive Entwicklung         | ❌ Nein               | ✅ Ja                             |
-| Mehrsprachigkeit           | ✅ Ja                 | ✅ Ja                             |
-| Backend-Sprachen           | ✅ Alle                  | Bald                             |
-| Eigene Feldtypen           | ❌ Nein               | ✅ Ja                             |
-| HTML5-Feldtypen            | ❌ Nein               | ✅ Ja                             |
-| YOrm-Dataset-Methoden      | ❌ Nein               | ✅ Ja                             |
-| Darstellung                | ⚠️ In Sidebar            | ✅ Sidebar oder Tab                 |
-| Berücksichtigung aller EPs | ✅ Ja                 | ⚠️ In Arbeit                        |
+| Aktive Entwicklung         | ❌ Nein               | ✅ Ja                            |
+| Mehrsprachigkeit           | ✅ Ja                 | ✅ Ja                            |
+| Backend-Sprachen           | ✅ Alle               | Bald                             |
+| Eigene Feldtypen           | ❌ Nein               | ✅ Ja                            |
+| HTML5-Feldtypen            | ❌ Nein               | ✅ Ja                            |
+| YOrm-Dataset-Methoden      | ❌ Nein               | ✅ Ja                            |
+| Darstellung                | ⚠️ In Sidebar         | ✅ Sidebar oder Tab              |
+| Berücksichtigung aller EPs | ✅ Ja                 | ⚠️ In Arbeit                     |
 
 ### Was unterscheidet dieses Addon vom Core-Addon?
 
-- Die Klasse `Structure` ist ein YOrm-Dataset. Du hast in deinem Code alle Features von YOrm zur Verfügung und kannst direkt loslegen.
+- Die Klasse `Article` und `Category` sind YOrm-Datasets. Du hast in deinem Code alle Features von YOrm zur Verfügung und kannst direkt loslegen.
 
 ### Die Einstellungsseite (in Arbeit)
 
