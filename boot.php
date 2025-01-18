@@ -69,3 +69,17 @@ if (\rex::isBackend()) {
         }
     }
 }
+
+if (\rex::isBackend()) {
+    rex_extension::register('YFORM_DATA_LIST', function ($ep) {
+
+        if ($ep->getParam('table')->getTableName() == "rex_structure_metainfo_article") {
+            $list = $ep->getSubject();
+            $list->removeColumn('id');
+        };
+        if ($ep->getParam('table')->getTableName() == "rex_structure_metainfo_category") {
+            $list = $ep->getSubject();
+            $list->removeColumn('id');
+        };
+    });
+}
