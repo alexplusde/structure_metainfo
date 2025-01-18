@@ -17,15 +17,22 @@ rex_extension::register('PACKAGES_INCLUDED', function (rex_extension_point $ep) 
             $params = $ep->getParams();
             $subject = $ep->getSubject();
 
-            $panel = include rex_path::addon('structure_metainfo', 'pages/sidebar.php');
+            $panel = include rex_path::addon('structure_metainfo', 'pages/article_sidebar.php');
 
             $fragment = new rex_fragment();
             $fragment->setVar('title', '<i class="fa rex-icon-metainfo"></i> ' . $this->i18n('structure_metainfo'), false);
             $fragment->setVar('body', $panel, false);
-            $content = $fragment->parse('core/page/section.php');
+            $content1 = $fragment->parse('core/page/section.php');
+
+            $panel = include rex_path::addon('structure_metainfo', 'pages/category_sidebar.php');
+
+            $fragment = new rex_fragment();
+            $fragment->setVar('title', '<i class="fa rex-icon-metainfo"></i> ' . $this->i18n('structure_metainfo'), false);
+            $fragment->setVar('body', $panel, false);
+            $content2 = $fragment->parse('core/page/section.php');
 
 
-            return $subject . $content;
+            return $content1 . $subject . $content2;
         }
     });
 }, rex_extension::EARLY);
@@ -64,7 +71,6 @@ if (\rex::isBackend()) {
         if(rex_config::get('structure_metainfo', 'sidebar_or_tab') === 'tab') {
                 Article::addContentTab();
                 Category::addContentTab();
-
         }
     }
 }

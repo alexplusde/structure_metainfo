@@ -129,9 +129,9 @@ class Article extends rex_yform_manager_dataset
     public static function addContentTab()
     {
         \rex_extension::register('PAGES_PREPARED', function () {
-            $page = new \rex_be_page('structure_metainfo', \rex_i18n::msg('structure_metainfo.tab.title'));
+            $page = new \rex_be_page('structure_metainfo', \rex_i18n::msg('structure_metainfo.article_tab.title'));
             $page->setPjax(false);
-            $page->setSubPath(\rex_addon::get('structure_metainfo')->getPath('pages/tab.php'));
+            $page->setSubPath(\rex_addon::get('structure_metainfo')->getPath('pages/article_tab.php'));
             $page_controller = \rex_be_controller::getPageObject('content');
             $page->setItemAttr('class', "pull-left");
             $page_controller->addSubpage($page);
