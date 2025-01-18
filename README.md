@@ -28,7 +28,7 @@ Anschließend können die passenden Metadaten am Artikel eingegeben werden.
 | Eigene Feldtypen           | ❌ Nein               | ✅ Ja                            |
 | HTML5-Feldtypen            | ❌ Nein               | ✅ Ja                            |
 | YOrm-Dataset-Methoden      | ❌ Nein               | ✅ Ja                            |
-| Darstellung                | ⚠️ In Sidebar         | ✅ Sidebar oder Tab              |
+| Darstellung                | ⚠️ Nur Sidebar        | ✅ Sidebar oder Tab              |
 | Berücksichtigung aller EPs | ✅ Ja                 | ✅ Ja                            |
 
 ### Was unterscheidet dieses Addon vom Core-Addon?
