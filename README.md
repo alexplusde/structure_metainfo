@@ -40,9 +40,9 @@ Anschließend können die passenden Meta-Informationen am Artikel eingegeben wer
 1. Wähle zwischen der Darstellung der Metainfos in der Sidebar oder im Tab.
 2. Wähle den Modus, ob Metainfos sprachunabhängig oder in allen Sprachen gepflegt werden können.
 
-### Die Klasse `Article` - Meta-Infos für deine Struktur-Artikel
+### Die Klasse `Article` - Meta-Infos für deine Artikel
 
-### Die Klasse `Category` - Meta-Infos für deine Struktur-Artikel
+### Die Klasse `Category` - Meta-Infos für deine Kategorien
 
 ## Weiterentwicklung unterstützen
 
