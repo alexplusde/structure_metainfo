@@ -2,10 +2,12 @@ structure_metainfo = Structure Metadaten
 structure_metainfo_title = Metadaten
 
 # Menü-Reiter
+structure_metainfo.title = Metadaten
 structure_metainfo.article = Artikel-Metadaten
 structure_metainfo.category = Kategorie-Metadaten
-structure_metainfo.field = Felder
-structure_metainfo.field = Felder
+structure_metainfo.article_field = Felder (Artikel)
+structure_metainfo.category_field = Felder (Kategorien)
+structure_metainfo.settings = Einstellungen
 structure_metainfo.docs = Docs
 
 # YForm Felder

@@ -16,6 +16,14 @@ page:
     perm: admin[]
     icon: rex-icon rex-icon-metainfo
     subpages:
+        article_field:
+            title: translate:structure_metainfo.article_field
+            perm: structure_metainfo[field]
+            icon: rex-icon rex-icon-metainfo
+        category_field:
+            title: translate:structure_metainfo.category_field
+            perm: structure_metainfo[field]
+            icon: rex-icon rex-icon-metainfo
         article:
             title: translate:structure_metainfo.article
             perm: structure_metainfo[article]
@@ -24,14 +32,10 @@ page:
             title: translate:structure_metainfo.category
             perm: structure_metainfo[article]
             icon: rex-icon rex-icon-category
-        article_field:
-            title: translate:structure_metainfo.field
-            perm: structure_metainfo[field]
-            icon: rex-icon rex-icon-metainfo
-        category_field:
-            title: translate:structure_metainfo.field
-            perm: structure_metainfo[field]
-            icon: rex-icon rex-icon-metainfo
+        settings:
+            title: translate:structure_metainfo.settings
+            perm: structure_metainfo[settings]
+            icon: rex-icon fa-cogs
         docs:
             title: translate:structure_metainfo.docs
             perm: structure_metainfo[]

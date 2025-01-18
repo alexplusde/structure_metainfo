@@ -6,7 +6,7 @@
  */
 
 $addon = rex_addon::get('structure_metainfo');
-$table_name = 'rex_structure_metainfo';
+$table_name = 'rex_structure_metainfo_article';
 
 rex_extension::register(
     'YFORM_MANAGER_DATA_PAGE_HEADER',
