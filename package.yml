@@ -12,32 +12,31 @@ requires:
         yform/manager: "^4"
 
 page:
-    strucutre_metainfo:
-        title: translate:structure_metainfo_title
-        perm: admin[]
-        icon: rex-icon rex-icon-metainfo
-        subpages:
-            article:
-                title: translate:structure_metainfo.article
-                perm: structure_metainfo[article]
-                icon: rex-icon rex-icon-article
-            category:
-                title: translate:structure_metainfo.article
-                perm: structure_metainfo[article]
-                icon: rex-icon rex-icon-article
-            article_field:
-                title: translate:structure_metainfo.field
-                perm: structure_metainfo[field]
-                icon: rex-icon rex-icon-metainfo
-            category_field:
-                title: translate:structure_metainfo.field
-                perm: structure_metainfo[field]
-                icon: rex-icon rex-icon-metainfo
-            docs:
-                title: translate:structure_metainfo.docs
-                perm: structure_metainfo[]
-                icon: rex-icon fa-info-circle
-                itemClass: pull-right
+    title: translate:structure_metainfo_title
+    perm: admin[]
+    icon: rex-icon rex-icon-metainfo
+    subpages:
+        article:
+            title: translate:structure_metainfo.article
+            perm: structure_metainfo[article]
+            icon: rex-icon rex-icon-article
+        category:
+            title: translate:structure_metainfo.category
+            perm: structure_metainfo[article]
+            icon: rex-icon rex-icon-category
+        article_field:
+            title: translate:structure_metainfo.field
+            perm: structure_metainfo[field]
+            icon: rex-icon rex-icon-metainfo
+        category_field:
+            title: translate:structure_metainfo.field
+            perm: structure_metainfo[field]
+            icon: rex-icon rex-icon-metainfo
+        docs:
+            title: translate:structure_metainfo.docs
+            perm: structure_metainfo[]
+            icon: rex-icon fa-info-circle
+            itemClass: pull-right
 
 default_config:
     sidebar_or_tab: tab

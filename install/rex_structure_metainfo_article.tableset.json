@@ -1,15 +1,15 @@
 {
-    "rex_structure_metainfo": {
+    "rex_structure_metainfo_article": {
         "table": {
             "status": 1,
-            "table_name": "rex_structure_metainfo",
-            "name": "translate:structure_metainfo.table",
+            "table_name": "rex_structure_metainfo_article",
+            "name": "translate:structure_metainfo_article.table",
             "description": "",
             "list_amount": 50,
             "list_sortfield": "id",
             "list_sortorder": "ASC",
             "search": 0,
-            "hidden": 0,
+            "hidden": 1,
             "export": 0,
             "import": 0,
             "mass_deletion": 0,
@@ -23,7 +23,7 @@
         },
         "fields": [
             {
-                "table_name": "rex_structure_metainfo",
+                "table_name": "rex_structure_metainfo_article",
                 "prio": 1,
                 "type_id": "value",
                 "type_name": "structure_metainfo",
@@ -35,7 +35,7 @@
                 "not_required": ""
             },
             {
-                "table_name": "rex_structure_metainfo",
+                "table_name": "rex_structure_metainfo_article",
                 "prio": 2,
                 "type_id": "validate",
                 "type_name": "empty",
@@ -48,7 +48,7 @@
                 "message": "Das Feld \"article_id\" ist leer. Versuche, das Addon \"structure_metainfo\" zu reinstallieren. Wenn das nicht funktioniert, melde dem Addon-Entwickler das Problem."
             },
             {
-                "table_name": "rex_structure_metainfo",
+                "table_name": "rex_structure_metainfo_article",
                 "prio": 3,
                 "type_id": "value",
                 "type_name": "structure_metainfo",
@@ -60,7 +60,7 @@
                 "not_required": ""
             },
             {
-                "table_name": "rex_structure_metainfo",
+                "table_name": "rex_structure_metainfo_article",
                 "prio": 5,
                 "type_id": "validate",
                 "type_name": "unique",
@@ -75,7 +75,7 @@
                 "message": "Die Kombination \"article_id+article_clang_id\" existiert bereits. Versuche, das Addon \"structure_metainfo\" zu reinstallieren. Wenn das nicht funktioniert, melde dem Addon-Entwickler das Problem."
             },
             {
-                "table_name": "rex_structure_metainfo",
+                "table_name": "rex_structure_metainfo_article",
                 "prio": 6,
                 "type_id": "value",
                 "type_name": "structure_metainfo",
@@ -87,7 +87,7 @@
                 "not_required": ""
             },
             {
-                "table_name": "rex_structure_metainfo",
+                "table_name": "rex_structure_metainfo_article",
                 "prio": 7,
                 "type_id": "validate",
                 "type_name": "unique",

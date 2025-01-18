@@ -5,8 +5,23 @@ namespace Alexplusde\StructureMetainfo;
 use rex_category;
 use rex_yform_manager_dataset;
 
-class Category extends Structure
+class Category extends rex_yform_manager_dataset
 {
+    public static function getCurrent(): ?self
+    {
+        return self::query()->where('article_id', rex_category::getCurrent())->findOne();
+    }
+    /** @api */
+    
+    public static function getCurrentValue(string $key): mixed
+    {
+        $article = self::getCurrent();
+        if ($article instanceof self) {
+            return $article->getValue($key);
+        }
+        return null;
+    }
+
  /*
  CAT_ADDED
 : Daten: $message

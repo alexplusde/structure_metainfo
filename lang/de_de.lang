@@ -1,22 +1,26 @@
-structure_metainfo = Structure Meta-Infos
-structure_metainfo_title = Meta-Infos
+structure_metainfo = Structure Metadaten
+structure_metainfo_title = Metadaten
 
 # Menü-Reiter
-structure_metainfo_domain = Allgemein
-structure_metainfo_docs = Docs
+structure_metainfo.article = Artikel-Metadaten
+structure_metainfo.category = Kategorie-Metadaten
+structure_metainfo.field = Felder
+structure_metainfo.field = Felder
+structure_metainfo.docs = Docs
 
 # YForm Felder
-structure_metainfo.table = 🍋 Structure Meta-Infos
-structure_metainfo_fields = Felder
+structure_metainfo_article.table = 🍋 Artikel Metadaten
+structure_metainfo_category.table = 🍋 Kategorie Metadaten
 
 structure_metainfo_add = Hinzufügen
 structure_metainfo_edit = Bearbeiten
 yform_values_structure_metainfo = Feldwert
 
 # Struktur - Editiermodus
-structure_metainfo.structure.title = Artikel-Metadaten
+structure_metainfo.structure_article.title = Artikel-Metadaten
+structure_metainfo.structure_category.title = Kategorie-Metadaten
 structure_metainfo.updated = Angaben erfolgreich gespeichert.
 structure_metainfo.update = aktualisieren
 
-structure_metainfo.tab.title = Meta-Infos
-structure_metainfo.category_tab.title = Meta-Infos (Kategorie)
+structure_metainfo.article_tab.title = Metadaten
+structure_metainfo.category_tab.title = Metadaten (Kategorie)

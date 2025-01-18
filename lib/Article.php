@@ -5,8 +5,23 @@ namespace Alexplusde\StructureMetainfo;
 use rex_article;
 use rex_yform_manager_dataset;
 
-class Article extends Structure
+class Article extends rex_yform_manager_dataset
 {
+    public static function getCurrent(): ?self
+    {
+        return self::query()->where('article_id', rex_article::getCurrent())->findOne();
+    }
+    /** @api */
+    
+    public static function getCurrentValue(string $key): mixed
+    {
+        $article = self::getCurrent();
+        if ($article instanceof self) {
+            return $article->getValue($key);
+        }
+        return null;
+    }
+
     /*
     ART_UPDATED
 : Daten: $message
@@ -85,4 +100,17 @@ class Article extends Structure
  *   : Daten: keine
  *   : Parameter: ['id' => $neu_id, 'id_old' => $alt_id, 'clang' => $clang]
  *
+ */
+
+
+/**
+ * 
+* CLANG_ADDED
+* : Daten: keine
+* : Parameter: ['id' => $clang->getId(), 'name' => $clang->getName(), 'clang' => $clang]
+
+* CLANG_DELETED
+* : Daten: keine
+* : Parameter: ['id' => $clang->getId(), 'name' => $clang->getName(), 'clang' => $clang]
+
  */

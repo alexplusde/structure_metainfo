@@ -13,11 +13,6 @@ use rex_be_controller;
 use rex_category;
 use rex_article;
 
-rex_yform_manager_dataset::setModelClass(
-    'rex_structure_metainfo',
-    Structure::class,
-);
-
 // Listendarstellung von YRewrite Domains um eine Spalte ergänzen mit Link zu YRewrite Metainfos
 rex_extension::register('PACKAGES_INCLUDED', function (rex_extension_point $ep) {
     rex_extension::register('STRUCTURE_CONTENT_SIDEBAR', function (rex_extension_point $ep) {
@@ -56,11 +51,7 @@ rex_extension::register('CAT_DELETED', [Category::class, 'epCatDeleted']);
 
 if (\rex_addon::get('yform')->isAvailable() && !\rex::isSafeMode()) {
     rex_yform_manager_dataset::setModelClass(
-        'rex_structure_metainfo',
-        Structure::class
-    );
-    rex_yform_manager_dataset::setModelClass(
-        'rex_structure_metainfo',
+        'rex_structure_metainfo_article',
         Article::class
     );
     rex_yform_manager_dataset::setModelClass(
@@ -71,10 +62,10 @@ if (\rex_addon::get('yform')->isAvailable() && !\rex::isSafeMode()) {
 
 if (\rex::isBackend()) {
     if(rex_be_controller::getCurrentPagePart() && rex_be_controller::getCurrentPagePart()[0] == "content") {
-//        if(rex_config::get('structure_metainfo', 'sidebar_or_tab') === 'tab') {
+        if(rex_config::get('structure_metainfo', 'sidebar_or_tab') === 'tab') {
                 Article::addContentTab();
                 Category::addContentTab();
 
-//        }
+        }
     }
 }
