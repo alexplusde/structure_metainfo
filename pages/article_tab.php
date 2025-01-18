@@ -47,7 +47,7 @@ if($entry->exists() === true) {
 
 $fragment = new rex_fragment();
 $fragment->setVar('class', 'edit', false);
-$fragment->setVar('title', rex_i18n::msg('structure_metainfo.tab.title'), false);
+$fragment->setVar('title', rex_i18n::msg('structure_metainfo.article_tab.title'), false);
 $fragment->setVar('body', $yform->getForm(), false);
 
 return $fragment->parse('core/page/section.php');
